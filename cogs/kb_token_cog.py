@@ -125,7 +125,7 @@ class TokenCog(commands.Cog):
             seconds = -seconds
 
         # 3) Modify target's cooldown
-        success = self.modify_image_cooldown(cooldown, target.id, seconds)
+        success = self.modify_cooldown(cooldown, target.id, seconds)
         if not success:
             return await ctx.respond("❌ Unknown cooldown type.", ephemeral=True)
 
@@ -238,16 +238,17 @@ class DiceBetView(discord.ui.View):
         return True
 
     async def on_timeout(self):
-        # disable buttons if time runs out
-        for child in self.children:
-            if isinstance(child, discord.ui.Button):
-                child.disabled = True
-        # Try updating the message if we have it
-        if self.message:
-            try:
-                await self.message.edit(content="Bet timed out!", view=self)
-            except:
-                pass
+        if not self.chosen:
+            # disable buttons if time runs out
+            for child in self.children:
+                if isinstance(child, discord.ui.Button):
+                    child.disabled = True
+            # Try updating the message if we have it
+            if self.message:
+                try:
+                    await self.message.edit(content="Bet timed out!", view=self)
+                except:
+                    pass
 
     def disable_all_buttons(self):
         for child in self.children:

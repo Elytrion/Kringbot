@@ -1,18 +1,18 @@
 {
   "daily_img_cd_250264560554999808": {
-    "value": 13207.736404418945,
+    "value": 12272.174545764923,
     "time_based": true,
-    "saved_at": 1743761163.6616516
+    "saved_at": 1743762099.2235103
   },
   "daily_img_cd_170479538151751682": {
-    "value": 15357.133522987366,
+    "value": 14421.571664333344,
     "time_based": true,
-    "saved_at": 1743761163.6616516
+    "saved_at": 1743762099.2235103
   },
   "kringpic_img_cd_250264560554999808": {
     "value": 0,
     "time_based": true,
-    "saved_at": 1743761163.6616516
+    "saved_at": 1743762099.2235103
   },
   "no_cd_kringpic_250264560554999808": {
     "value": false,
@@ -22,7 +22,7 @@
   "kringpic_img_cd_170479538151751682": {
     "value": 0,
     "time_based": true,
-    "saved_at": 1743761163.6616516
+    "saved_at": 1743762099.2235103
   },
   "512550572864307222_deleted": {
     "value": [
@@ -148,28 +148,53 @@
     "saved_at": null
   },
   "daily_img_cd_217668205597032448": {
-    "value": 13299.438686132431,
+    "value": 12363.876827478409,
     "time_based": true,
-    "saved_at": 1743761163.6616516
+    "saved_at": 1743762099.2235103
   },
   "daily_img_cd_239072925137895424": {
-    "value": 32755.84466433525,
+    "value": 31820.28280568123,
     "time_based": true,
-    "saved_at": 1743761163.6616516
+    "saved_at": 1743762099.2235103
   },
   "daily_img_cd_332920035066511362": {
-    "value": 37737.85565853119,
+    "value": 36802.29379987717,
     "time_based": true,
-    "saved_at": 1743761163.6616516
+    "saved_at": 1743762099.2235103
   },
   "ktoken_balance_250264560554999808": {
-    "value": 2101,
+    "value": 71,
     "time_based": false,
     "saved_at": null
   },
   "ktoken_claim_cd_250264560554999808": {
-    "value": 1623.415682554245,
+    "value": 687.8538239002228,
     "time_based": true,
-    "saved_at": 1743761163.6616516
+    "saved_at": 1743762099.2235103
+  },
+  "ktoken_balance_239072925137895424": {
+    "value": 14404,
+    "time_based": false,
+    "saved_at": null
+  },
+  "ktoken_claim_cd_239072925137895424": {
+    "value": 3355.9077875614166,
+    "time_based": true,
+    "saved_at": 1743762099.2235103
+  },
+  "ktoken_balance_217668205597032448": {
+    "value": 3601,
+    "time_based": false,
+    "saved_at": null
+  },
+  "ktoken_claim_cd_217668205597032448": {
+    "value": 3451.465765953064,
+    "time_based": true,
+    "saved_at": 1743762099.2235103
+  },
+  "daily_img_cd_186860864219906048": {
+    "value": 43200,
+    "time_based": true,
+    "saved_at": 1743762218.0491602
   }
 }
