@@ -1,18 +1,18 @@
 {
   "daily_img_cd_250264560554999808": {
-    "value": 12272.174545764923,
+    "value": 6901.612018108368,
     "time_based": true,
-    "saved_at": 1743762099.2235103
+    "saved_at": 1743767469.786038
   },
   "daily_img_cd_170479538151751682": {
-    "value": 14421.571664333344,
+    "value": 9551.009140491486,
     "time_based": true,
-    "saved_at": 1743762099.2235103
+    "saved_at": 1743767469.786038
   },
   "kringpic_img_cd_250264560554999808": {
     "value": 0,
     "time_based": true,
-    "saved_at": 1743762099.2235103
+    "saved_at": 1743767469.786038
   },
   "no_cd_kringpic_250264560554999808": {
     "value": false,
@@ -22,7 +22,7 @@
   "kringpic_img_cd_170479538151751682": {
     "value": 0,
     "time_based": true,
-    "saved_at": 1743762099.2235103
+    "saved_at": 1743767469.786038
   },
   "512550572864307222_deleted": {
     "value": [
@@ -121,6 +121,30 @@
       ],
       [
         239072925137895424,
+        1357687003835273386,
+        "kringbot-spam",
+        "i didnt account for only the own players to click",
+        [
+          [
+            1743768212.8944502,
+            "i didnt account for only the own player to click"
+          ]
+        ]
+      ],
+      [
+        239072925137895424,
+        1357680763449119010,
+        "kringbot-spam",
+        "<@250264560554999808> can i push and see if kringles can play backjack?",
+        [
+          [
+            1743766723.468217,
+            "<@250264560554999808> can i push and see if kringles can play blackjack?"
+          ]
+        ]
+      ],
+      [
+        239072925137895424,
         1357642333520265340,
         "digipen-state-of-mind",
         "at least you didnt lose 500 dollars of hair washing",
@@ -148,39 +172,39 @@
     "saved_at": null
   },
   "daily_img_cd_217668205597032448": {
-    "value": 12363.876827478409,
+    "value": 6993.314299821854,
     "time_based": true,
-    "saved_at": 1743762099.2235103
+    "saved_at": 1743767469.786038
   },
   "daily_img_cd_239072925137895424": {
-    "value": 31820.28280568123,
+    "value": 26449.720278024673,
     "time_based": true,
-    "saved_at": 1743762099.2235103
+    "saved_at": 1743767469.786038
   },
   "daily_img_cd_332920035066511362": {
-    "value": 36802.29379987717,
+    "value": 31431.73127222061,
     "time_based": true,
-    "saved_at": 1743762099.2235103
+    "saved_at": 1743767469.786038
   },
   "ktoken_balance_250264560554999808": {
-    "value": 71,
+    "value": 831,
     "time_based": false,
     "saved_at": null
   },
   "ktoken_claim_cd_250264560554999808": {
-    "value": 687.8538239002228,
+    "value": 0,
     "time_based": true,
-    "saved_at": 1743762099.2235103
+    "saved_at": 1743767469.786038
   },
   "ktoken_balance_239072925137895424": {
-    "value": 14404,
+    "value": 18404,
     "time_based": false,
     "saved_at": null
   },
   "ktoken_claim_cd_239072925137895424": {
-    "value": 3355.9077875614166,
+    "value": 0,
     "time_based": true,
-    "saved_at": 1743762099.2235103
+    "saved_at": 1743767469.786038
   },
   "ktoken_balance_217668205597032448": {
     "value": 3601,
@@ -188,13 +212,33 @@
     "saved_at": null
   },
   "ktoken_claim_cd_217668205597032448": {
-    "value": 3451.465765953064,
+    "value": 0,
     "time_based": true,
-    "saved_at": 1743762099.2235103
+    "saved_at": 1743767469.786038
   },
   "daily_img_cd_186860864219906048": {
-    "value": 43200,
+    "value": 37948.263122320175,
     "time_based": true,
-    "saved_at": 1743762218.0491602
+    "saved_at": 1743767469.786038
+  },
+  "ktoken_balance_170479538151751682": {
+    "value": 3600,
+    "time_based": false,
+    "saved_at": null
+  },
+  "ktoken_claim_cd_170479538151751682": {
+    "value": 3600,
+    "time_based": true,
+    "saved_at": 1743768049.1452234
+  },
+  "ktoken_balance_332920035066511362": {
+    "value": 3000,
+    "time_based": false,
+    "saved_at": null
+  },
+  "ktoken_claim_cd_332920035066511362": {
+    "value": 3600,
+    "time_based": true,
+    "saved_at": 1743768654.10056
   }
 }

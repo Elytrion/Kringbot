@@ -214,6 +214,30 @@ class TokenCog(commands.Cog):
         )
         await ctx.respond(embed=embed, view=view)
 
+     
+    #####################
+    # Black Jack with Kringles
+    #####################
+    @ktokengrp.command(name="blackjack", description="Play blackjack with ktokens!")
+    async def blackjack(
+    self,
+    ctx: discord.ApplicationContext,
+    bet: Option(int, description="How many tokens to bet", min_value=1)
+    ):
+        user_id = ctx.author.id
+        current_balance = self.get_balance(user_id)
+        if bet > current_balance:
+            return await ctx.respond(
+                f"❌ You only have {current_balance} tokens, but you tried to bet {bet}.",
+                ephemeral=True
+            )
+
+        # Deduct the bet up front
+        self.set_balance(user_id, current_balance - bet)
+
+        # Start the blackjack game
+        view = BlackjackView(self, ctx.author, bet)
+        await view.start(ctx)
 
 class DiceBetView(discord.ui.View):
     """
@@ -349,6 +373,233 @@ class DiceBetView(discord.ui.View):
         # update the original message
         await interaction.response.edit_message(content=result, embed=None, view=self)
     
+class BlackjackView(discord.ui.View):
+    def __init__(self, token_cog, player, bet_amount):
+        super().__init__(timeout=180)
+        self.token_cog = token_cog
+        self.player = player
+        self.bet = bet_amount
+
+        self.deck = self.generate_deck()
+        random.shuffle(self.deck)
+
+        self.player_hands = []  # list of hands
+        self.current_hand_index = 0
+        self.split_bet = False
+
+        self.dealer_hand = []
+        self.message = None
+        self.finished = False
+        # Keep track of total spent (bet). If the user splits once, 
+        # they effectively spend double the initial bet.
+        self.total_spent = self.bet  # might become 2× after split
+
+    async def start(self, ctx):
+        hand = [self.deck.pop(), self.deck.pop()]
+        self.player_hands = [hand]
+        self.dealer_hand = [self.deck.pop(), self.deck.pop()]
+
+        embed = self.build_embed(initial=True)
+        # Save a reference to the interaction's resulting message
+        self.message = await ctx.respond(embed=embed, view=self)
+
+    ########################
+    # Interaction Restriction
+    ########################
+    async def interaction_check(self, interaction: discord.Interaction) -> bool:
+        """
+        Only the user who started the game can press the buttons;
+        everyone else sees an ephemeral error message.
+        """
+        if interaction.user.id != self.player.id:
+            await interaction.response.send_message(
+                "You are not the player of this Blackjack session!",
+                ephemeral=True
+            )
+            return False
+        return True
+
+    def generate_deck(self):
+        return [r + s for r in "23456789TJQKA" for s in "♠♥♦♣"]
+
+    def hand_value(self, hand):
+        value, aces = 0, 0
+        for card in hand:
+            rank = card[0]
+            if rank in "JQKT":
+                value += 10
+            elif rank == "A":
+                value += 11
+                aces += 1
+            else:
+                value += int(rank)
+        while value > 21 and aces:
+            value -= 10
+            aces -= 1
+        return value
+
+    def build_embed(self, initial=False, reveal_dealer=False):
+        embed = discord.Embed(title="🃏 Blackjack", color=discord.Color.green())
+
+        for i, hand in enumerate(self.player_hands):
+            label = "Your hand" if len(self.player_hands) == 1 else f"Hand {i+1}"
+            value = self.hand_value(hand)
+            marker = "← Playing" if (i == self.current_hand_index and not self.finished) else ""
+            embed.add_field(
+                name=f"{label} ({value}) {marker}",
+                value=", ".join(hand),
+                inline=False
+            )
+
+        if reveal_dealer or self.finished:
+            dval = self.hand_value(self.dealer_hand)
+            embed.add_field(
+                name=f"Kringbot's hand ({dval})",
+                value=", ".join(self.dealer_hand),
+                inline=False
+            )
+        else:
+            embed.add_field(
+                name="Kringbot's hand (?)",
+                value=f"{self.dealer_hand[0]}, ??",
+                inline=False
+            )
+
+        return embed
+
+    def disable_all_buttons(self):
+        for item in self.children:
+            item.disabled = True
+
+    def can_split(self):
+        return (
+            len(self.player_hands) == 1
+            and len(self.player_hands[0]) == 2
+            and self.player_hands[0][0][0] == self.player_hands[0][1][0]  # same rank
+        )
+
+    ########################
+    # Main End-Game Logic
+    ########################
+    async def end_game(self, interaction):
+        self.disable_all_buttons()
+        self.finished = True
+
+        # Dealer draws to 17
+        dealer_val = self.hand_value(self.dealer_hand)
+        while dealer_val < 17:
+            self.dealer_hand.append(self.deck.pop())
+            dealer_val = self.hand_value(self.dealer_hand)
+
+        embed = self.build_embed(reveal_dealer=True)
+        total_return = 0
+        result_text = ""
+
+        for i, hand in enumerate(self.player_hands):
+            pval = self.hand_value(hand)
+
+            # If not split or i==0, bet_amt = self.bet, else another bet
+            bet_amt = self.bet if (i == 0 or not self.split_bet) else self.bet
+            res = ""
+            payout = 0
+
+            if pval > 21:
+                # Bust
+                res = f"❌ Hand {i+1}: Bust!"
+            else:
+                # Evaluate vs. dealer
+                if dealer_val > 21 or pval > dealer_val:
+                    # Possible Blackjack bonus
+                    if pval == 21 and len(hand) == 2:
+                        # e.g. 1.5 × bet
+                        payout = int(bet_amt * 1.5)
+                        res = f"🂡 Hand {i+1}: Blackjack! +{payout}"
+                    else:
+                        payout = bet_amt * 2
+                        prof = payout - bet_amt
+                        res = f"✅ Hand {i+1}: Win! +{prof}"
+                elif pval == dealer_val:
+                    # tie => return original bet
+                    payout = bet_amt
+                    res = f"🤝 Hand {i+1}: Tie! Bet returned."
+                else:
+                    # dealer higher
+                    res = f"❌ Hand {i+1}: Loss."
+
+            total_return += payout
+            result_text += res + "\n"
+
+        # 1) Put tokens back
+        old_balance = self.token_cog.get_balance(self.player.id)
+        self.token_cog.set_balance(self.player.id, old_balance + total_return)
+
+        # 2) Net Change: total_spent is self.bet (and if split, 2× bet).
+        # If we split once, total_spent = bet * 2
+        net = total_return - self.total_spent
+        if net > 0:
+            net_str = f"You gained **{net}** tokens overall!"
+        elif net < 0:
+            net_str = f"You lost **{-net}** tokens overall!"
+        else:
+            net_str = "You broke even!"
+
+        embed.add_field(name="Results", value=result_text, inline=False)
+        embed.add_field(name="Net Change", value=net_str, inline=False)
+
+        await interaction.response.edit_message(embed=embed, view=self)
+
+    ########################
+    # Buttons
+    ########################
+    @discord.ui.button(label="Hit", style=discord.ButtonStyle.success)
+    async def hit_button(self, button, interaction: discord.Interaction):
+        hand = self.player_hands[self.current_hand_index]
+        hand.append(self.deck.pop())
+
+        if self.hand_value(hand) > 21:
+            # bust => move to next hand or end
+            if self.current_hand_index + 1 < len(self.player_hands):
+                self.current_hand_index += 1
+            else:
+                return await self.end_game(interaction)
+
+        await interaction.response.edit_message(embed=self.build_embed(), view=self)
+
+    @discord.ui.button(label="Stand", style=discord.ButtonStyle.danger)
+    async def stand_button(self, button, interaction: discord.Interaction):
+        # Move to next hand or end
+        if self.current_hand_index + 1 < len(self.player_hands):
+            self.current_hand_index += 1
+            await interaction.response.edit_message(embed=self.build_embed(), view=self)
+        else:
+            await self.end_game(interaction)
+
+    @discord.ui.button(label="Split", style=discord.ButtonStyle.secondary)
+    async def split_button(self, button, interaction: discord.Interaction):
+        if not self.can_split():
+            return await interaction.response.send_message("❌ You can't split this hand.", ephemeral=True)
+
+        current_balance = self.token_cog.get_balance(self.player.id)
+        if current_balance < self.bet:
+            return await interaction.response.send_message("❌ Not enough tokens to split.", ephemeral=True)
+
+        # Deduct one more bet from player's balance
+        self.token_cog.set_balance(self.player.id, current_balance - self.bet)
+        self.total_spent += self.bet  # Increase total spent by another bet
+
+        # Perform the split
+        first_card = self.player_hands[0][0]
+        second_card = self.player_hands[0][1]
+
+        self.player_hands = [
+            [first_card, self.deck.pop()],
+            [second_card, self.deck.pop()],
+        ]
+        self.split_bet = True
+        self.current_hand_index = 0
+
+        await interaction.response.edit_message(embed=self.build_embed(), view=self)
+
 
 def setup(bot):
     bot.add_cog(TokenCog(bot))
