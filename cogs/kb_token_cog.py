@@ -419,8 +419,11 @@ class BlackjackView(discord.ui.View):
             return False
         return True
 
-    def generate_deck(self):
-        return [r + s for r in "23456789TJQKA" for s in "♠♥♦♣"]
+    def generate_deck(self, num_decks=5):
+        """Generate num_decks copies of a standard 52-card deck."""
+        one_deck = [r + s for r in "23456789TJQKA" for s in "♠♥♦♣"]
+        return one_deck * num_decks
+
 
     def hand_value(self, hand):
         value, aces = 0, 0

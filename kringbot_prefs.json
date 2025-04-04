@@ -1,18 +1,18 @@
 {
   "daily_img_cd_250264560554999808": {
-    "value": 6901.612018108368,
+    "value": 5108.272001743317,
     "time_based": true,
-    "saved_at": 1743767469.786038
+    "saved_at": 1743769263.1260543
   },
   "daily_img_cd_170479538151751682": {
-    "value": 9551.009140491486,
+    "value": 7757.669124126434,
     "time_based": true,
-    "saved_at": 1743767469.786038
+    "saved_at": 1743769263.1260543
   },
   "kringpic_img_cd_250264560554999808": {
-    "value": 0,
+    "value": 65,
     "time_based": true,
-    "saved_at": 1743767469.786038
+    "saved_at": 1743770485.6614172
   },
   "no_cd_kringpic_250264560554999808": {
     "value": false,
@@ -22,7 +22,7 @@
   "kringpic_img_cd_170479538151751682": {
     "value": 0,
     "time_based": true,
-    "saved_at": 1743767469.786038
+    "saved_at": 1743769263.1260543
   },
   "512550572864307222_deleted": {
     "value": [
@@ -121,6 +121,30 @@
       ],
       [
         239072925137895424,
+        1357697090695856268,
+        "kringbot-spam",
+        "definition of bust all in",
+        [
+          [
+            1743770620.0746913,
+            "definition of \"bust all in\""
+          ]
+        ]
+      ],
+      [
+        239072925137895424,
+        1357696917542404146,
+        "kringbot-spam",
+        "yea it work",
+        [
+          [
+            1743770573.6118646,
+            "yea it works"
+          ]
+        ]
+      ],
+      [
+        239072925137895424,
         1357687003835273386,
         "kringbot-spam",
         "i didnt account for only the own players to click",
@@ -172,39 +196,39 @@
     "saved_at": null
   },
   "daily_img_cd_217668205597032448": {
-    "value": 6993.314299821854,
+    "value": 5199.974283456802,
     "time_based": true,
-    "saved_at": 1743767469.786038
+    "saved_at": 1743769263.1260543
   },
   "daily_img_cd_239072925137895424": {
-    "value": 26449.720278024673,
+    "value": 24656.380261659622,
     "time_based": true,
-    "saved_at": 1743767469.786038
+    "saved_at": 1743769263.1260543
   },
   "daily_img_cd_332920035066511362": {
-    "value": 31431.73127222061,
+    "value": 29638.39125585556,
     "time_based": true,
-    "saved_at": 1743767469.786038
+    "saved_at": 1743769263.1260543
   },
   "ktoken_balance_250264560554999808": {
-    "value": 831,
+    "value": 4442,
     "time_based": false,
     "saved_at": null
   },
   "ktoken_claim_cd_250264560554999808": {
-    "value": 0,
+    "value": 3600,
     "time_based": true,
-    "saved_at": 1743767469.786038
+    "saved_at": 1743770300.1423197
   },
   "ktoken_balance_239072925137895424": {
-    "value": 18404,
+    "value": 25514,
     "time_based": false,
     "saved_at": null
   },
   "ktoken_claim_cd_239072925137895424": {
     "value": 0,
     "time_based": true,
-    "saved_at": 1743767469.786038
+    "saved_at": 1743769263.1260543
   },
   "ktoken_balance_217668205597032448": {
     "value": 3601,
@@ -214,12 +238,12 @@
   "ktoken_claim_cd_217668205597032448": {
     "value": 0,
     "time_based": true,
-    "saved_at": 1743767469.786038
+    "saved_at": 1743769263.1260543
   },
   "daily_img_cd_186860864219906048": {
-    "value": 37948.263122320175,
+    "value": 36154.923105955124,
     "time_based": true,
-    "saved_at": 1743767469.786038
+    "saved_at": 1743769263.1260543
   },
   "ktoken_balance_170479538151751682": {
     "value": 3600,
@@ -227,9 +251,9 @@
     "saved_at": null
   },
   "ktoken_claim_cd_170479538151751682": {
-    "value": 3600,
+    "value": 2386.0191690921783,
     "time_based": true,
-    "saved_at": 1743768049.1452234
+    "saved_at": 1743769263.1260543
   },
   "ktoken_balance_332920035066511362": {
     "value": 3000,
@@ -237,8 +261,8 @@
     "saved_at": null
   },
   "ktoken_claim_cd_332920035066511362": {
-    "value": 3600,
+    "value": 2990.974505662918,
     "time_based": true,
-    "saved_at": 1743768654.10056
+    "saved_at": 1743769263.1260543
   }
 }
