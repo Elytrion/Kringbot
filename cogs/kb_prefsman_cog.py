@@ -1,5 +1,6 @@
 import discord
 import atexit
+import os
 from discord.ext import commands
 from utils import bot_prefs, drive_prefs
 
@@ -23,10 +24,14 @@ class PrefsManager(commands.Cog):
     @commands.Cog.listener()
     async def on_ready(self):
         # Load from Drive on first ready
-        if drive_prefs.download_from_drive(LOCAL_PREF_PATH):
+        if os.path.exists(LOCAL_PREF_PATH):
             bot_prefs.load(LOCAL_PREF_PATH)
+            print("[PrefsManager] ✅ Loaded local preferences.")
+        elif drive_prefs.download_from_drive(LOCAL_PREF_PATH):
+            bot_prefs.load(LOCAL_PREF_PATH)
+            print("[PrefsManager] ✅ No local pref found. Loaded cloud preferences.")
         else:
-            print("[PrefsManager] ⚠️ No cloud prefs found. Starting fresh.")
+            print("[PrefsManager] ⚠️ No local or remote prefs found. Starting fresh.")
 
     @commands.Cog.listener()
     async def on_disconnect(self):

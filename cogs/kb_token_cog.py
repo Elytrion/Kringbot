@@ -10,6 +10,8 @@ CLAIM_COOLDOWN = 3600  # 1 hour
 # 1 token = 1 second of cooldown modification
 SECONDS_PER_TOKEN = 1
 
+CLAIM_TOKEN_NUM = 1000
+
 class TokenCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -42,6 +44,8 @@ class TokenCog(commands.Cog):
             key = f"daily_img_cd_{target_id}"
         elif cooldown_type == "claim":
             key = f"ktoken_claim_cd_{target_id}"
+        elif cooldown_type == "kringpic":
+            key = f"kringpic_img_cd_{target_id}"
         else:
             return False  # Unknown type
 
@@ -78,11 +82,11 @@ class TokenCog(commands.Cog):
 
         # Award 1 token
         balance = self.get_balance(user_id)
-        self.set_balance(user_id, balance + 3600)
+        self.set_balance(user_id, balance + CLAIM_TOKEN_NUM)
         # Set claim cooldown
         self.set_claim_cooldown(user_id, CLAIM_COOLDOWN)
 
-        await ctx.respond(f"✅ You have claimed 1 ktoken! Your new balance: {balance+1}", ephemeral=True)
+        await ctx.respond(f"✅ You have claimed your ktokens! Your new balance: {balance+ CLAIM_TOKEN_NUM}", ephemeral=True)
 
     @ktokengrp.command(name="balance", description="Check your token balance")
     async def balance(self, ctx: discord.ApplicationContext):
@@ -98,7 +102,7 @@ class TokenCog(commands.Cog):
         self,
         ctx: discord.ApplicationContext,
         target: Option(discord.Member, description="Who to modify cooldown for"),
-        cooldown: Option(str, description="Which cooldown to adjust", choices=["daily", "claim"]),
+        cooldown: Option(str, description="Which cooldown to adjust", choices=["daily", "claim", "kringpic"]),
         tokens: Option(int, description="Number of tokens to spend (≥1) [1 Ktoken = 1 s]", min_value=1),
         mode: Option(str, description="Extend or reduce?", choices=["extend", "reduce"])
     ):
@@ -534,7 +538,10 @@ class BlackjackView(discord.ui.View):
 
         # 1) Put tokens back
         old_balance = self.token_cog.get_balance(self.player.id)
-        self.token_cog.set_balance(self.player.id, old_balance + total_return)
+        display_balance = old_balance + self.bet
+        final_balance = old_balance + total_return 
+        self.token_cog.set_balance(self.player.id, final_balance)
+        balance_str = f"{display_balance} → {final_balance}"
 
         # 2) Net Change: total_spent is self.bet (and if split, 2× bet).
         # If we split once, total_spent = bet * 2
@@ -548,6 +555,7 @@ class BlackjackView(discord.ui.View):
 
         embed.add_field(name="Results", value=result_text, inline=False)
         embed.add_field(name="Net Change", value=net_str, inline=False)
+        embed.add_field(name="Balance Change", value=balance_str, inline=False)
 
         await interaction.response.edit_message(embed=embed, view=self)
 

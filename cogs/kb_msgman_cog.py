@@ -268,8 +268,10 @@ class MessageManager(commands.Cog):
                 "original": original,
                 "edits": edits
             })
-
-        print(f"[Restore] ✅ Restored logs for guild {guild.name} ({gid})")
+        if len(deleted) > 0 and len(edited) > 0:
+            print(f"[Restore] ✅ Restored logs for guild {guild.name} ({gid})")
+        else:
+            print(f"[Restore] ⚠️ No restored logs for guild {guild.name} ({gid})")
 
     @discord.slash_command(
     name="purge-deleted",

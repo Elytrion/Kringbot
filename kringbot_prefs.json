@@ -1,93 +1,59 @@
 {
-  "daily_img_cd_250264560554999808": {
-    "value": 5108.272001743317,
-    "time_based": true,
-    "saved_at": 1743769263.1260543
-  },
-  "daily_img_cd_170479538151751682": {
-    "value": 7757.669124126434,
-    "time_based": true,
-    "saved_at": 1743769263.1260543
-  },
-  "kringpic_img_cd_250264560554999808": {
-    "value": 65,
-    "time_based": true,
-    "saved_at": 1743770485.6614172
-  },
-  "no_cd_kringpic_250264560554999808": {
-    "value": false,
+  "ktoken_balance_186860864219906048": {
+    "value": 800,
     "time_based": false,
     "saved_at": null
   },
-  "kringpic_img_cd_170479538151751682": {
+  "ktoken_balance_170479538151751682": {
+    "value": 8515,
+    "time_based": false,
+    "saved_at": null
+  },
+  "ktoken_balance_239072925137895424": {
+    "value": 5555,
+    "time_based": false,
+    "saved_at": null
+  },
+  "ktoken_balance_217668205597032448": {
     "value": 0,
-    "time_based": true,
-    "saved_at": 1743769263.1260543
+    "time_based": false,
+    "saved_at": null
+  },
+  "ktoken_balance_125527478595878912": {
+    "value": 0,
+    "time_based": false,
+    "saved_at": null
+  },
+  "ktoken_balance_279843819971674112": {
+    "value": 5555,
+    "time_based": false,
+    "saved_at": null
+  },
+  "ktoken_balance_332920035066511362": {
+    "value": 5555,
+    "time_based": false,
+    "saved_at": null
+  },
+  "ktoken_balance_250264560554999808": {
+    "value": 1035,
+    "time_based": false,
+    "saved_at": null
   },
   "512550572864307222_deleted": {
     "value": [
       [
-        1355001773894668451,
-        "**corin's chainsaw cleaner asks**: test\n**Kringbot says**: This is a successful test response. Use /status for more information",
+        170479538151751682,
+        "/k\\",
         "kringbot-spam",
-        1743732377.363,
-        1743732477.3715103
+        1744006830.3,
+        1744006839.1544926
       ],
       [
-        1355001773894668451,
-        "**corin's chainsaw cleaner asks**: test\n**Kringbot says**: This is a successful test response. Use /status for more information. ^w^!",
-        "kringbot-spam",
-        1743732409.065,
-        1743732474.6548688
-      ],
-      [
-        1355001773894668451,
-        "**corin's chainsaw cleaner asks**: test\n**Kringbot says**: This is a successful test response. Use /status for more information",
-        "kringbot-spam",
-        1743732008.408,
-        1743732014.6884024
-      ],
-      [
-        1355001773894668451,
-        "**corin's chainsaw cleaner asks**: big test energy\n**Kringbot says**: This is a successful test response. Use /status for more information",
-        "kringbot-spam",
-        1743731725.018,
-        1743731751.515999
-      ],
-      [
-        1355001773894668451,
-        "**corin's chainsaw cleaner asks**: please wish me a good presentation\n**Kringbot says**: hmmm... lemme think about this....",
-        "kringbot-spam",
-        1743731740.031,
-        1743731746.3688073
-      ],
-      [
-        1355001773894668451,
-        "**hu tao is eternal hahaha asks**: please wish your owner a good presentation\n**Kringbot says**: hmmm... lemme think about this....",
-        "kringbot-spam",
-        1743731601.485,
-        1743731605.165916
-      ],
-      [
-        1355001773894668451,
-        "\u2705 No recently deleted messages found for **Kringbot**.",
-        "kringbot-spam",
-        1743669639.16,
-        1743669645.3011491
-      ],
-      [
-        250264560554999808,
-        "./help",
-        "kringbot-spam",
-        1743731406.009,
-        1743731454.708638
-      ],
-      [
-        598362608944545802,
-        "see i told yall no diff",
-        "digipen-state-of-mind",
-        1743751538.218,
-        1743751917.115986
+        186860864219906048,
+        "godgab u can help wingman me and ask someone out",
+        "random",
+        1744007059.432,
+        1744007064.989879
       ]
     ],
     "time_based": false,
@@ -96,98 +62,86 @@
   "512550572864307222_edited": {
     "value": [
       [
-        217668205597032448,
-        1357532008728756364,
-        "kringbot-spam",
-        "<@250264560554999808> presenttaion finish already?",
-        [
-          [
-            1743731258.8517325,
-            "<@250264560554999808> presentation finish already?"
-          ]
-        ]
-      ],
-      [
-        598362608944545802,
-        1357620144372715562,
+        239072925137895424,
+        1358992597569376337,
         "digipen-state-of-mind",
-        "ukr",
+        "wait game balancing, damn rigging the slot machines?",
         [
           [
-            1743752269.778863,
-            "ikr"
+            1744079501.555352,
+            "wait game balancing, rigging the slot machines for more pay out?"
           ]
         ]
       ],
       [
         239072925137895424,
-        1357697090695856268,
-        "kringbot-spam",
-        "definition of bust all in",
-        [
-          [
-            1743770620.0746913,
-            "definition of \"bust all in\""
-          ]
-        ]
-      ],
-      [
-        239072925137895424,
-        1357696917542404146,
-        "kringbot-spam",
-        "yea it work",
-        [
-          [
-            1743770573.6118646,
-            "yea it works"
-          ]
-        ]
-      ],
-      [
-        239072925137895424,
-        1357687003835273386,
-        "kringbot-spam",
-        "i didnt account for only the own players to click",
-        [
-          [
-            1743768212.8944502,
-            "i didnt account for only the own player to click"
-          ]
-        ]
-      ],
-      [
-        239072925137895424,
-        1357680763449119010,
-        "kringbot-spam",
-        "<@250264560554999808> can i push and see if kringles can play backjack?",
-        [
-          [
-            1743766723.468217,
-            "<@250264560554999808> can i push and see if kringles can play blackjack?"
-          ]
-        ]
-      ],
-      [
-        239072925137895424,
-        1357642333520265340,
+        1358708324086059119,
         "digipen-state-of-mind",
-        "at least you didnt lose 500 dollars of hair washing",
+        "with displaying your shoe in your opaque cabinet?",
         [
           [
-            1743757569.4101393,
-            "at least you didnt lose 500 dollars to hair washing"
+            1744011720.3043997,
+            "with displaying your shoes in your opaque cabinet?"
           ]
         ]
       ],
       [
         239072925137895424,
-        1357622838781149256,
+        1358628668619882659,
+        "kringbot-spam",
+        "damn apolo K tokens time to extend kai jun's time",
+        [
+          [
+            1743992727.3575265,
+            "damn apolo K tokens, time to extend kai jun's time"
+          ]
+        ]
+      ],
+      [
+        250264560554999808,
+        1358991136252887234,
         "random",
-        "that one right is literally not because you cannot tah han the police and the tanks, but more like you want to move on to the next one",
+        "<@217668205597032448> a kWing",
         [
           [
-            1743752933.6126037,
-            "that one right is literally not because you cannot tah han the police and the tanks, but more like you play until sian then want to move on"
+            1744079139.1884675,
+            "<@217668205597032448> a kWinG"
+          ]
+        ]
+      ],
+      [
+        250264560554999808,
+        1358690610155884615,
+        "random",
+        "i decide i dont have a game jon",
+        [
+          [
+            1744007489.1374202,
+            "i decide i dont have a game job"
+          ]
+        ]
+      ],
+      [
+        250264560554999808,
+        1358685513208561736,
+        "kringbot-spam",
+        "sho orange and shof",
+        [
+          [
+            1744006273.986864,
+            "sho orange and shoft"
+          ]
+        ]
+      ],
+      [
+        250264560554999808,
+        1358631269939806411,
+        "kringbot-spam",
+        "Can you give me a compelling argument to give u more tokens <@170479538151751682>",
+        [
+          [
+            1743993347.8108768,
+            "Can you give me a compelling argument to give u more tokens <@170479538151751682>?"
           ]
         ]
       ]
@@ -195,74 +149,59 @@
     "time_based": false,
     "saved_at": null
   },
+  "ktoken_claim_cd_170479538151751682": {
+    "value": 0,
+    "time_based": true,
+    "saved_at": 1744080543.2355037
+  },
+  "daily_img_cd_170479538151751682": {
+    "value": 0,
+    "time_based": true,
+    "saved_at": 1744080543.2355037
+  },
+  "ktoken_claim_cd_125527478595878912": {
+    "value": 2203.3249583244324,
+    "time_based": true,
+    "saved_at": 1744080543.2355037
+  },
+  "kringpic_img_cd_170479538151751682": {
+    "value": 0,
+    "time_based": true,
+    "saved_at": 1744080543.2355037
+  },
+  "kringpic_img_cd_250264560554999808": {
+    "value": 0,
+    "time_based": true,
+    "saved_at": 1744080543.2355037
+  },
   "daily_img_cd_217668205597032448": {
-    "value": 5199.974283456802,
+    "value": 0,
     "time_based": true,
-    "saved_at": 1743769263.1260543
+    "saved_at": 1744080543.2355037
   },
-  "daily_img_cd_239072925137895424": {
-    "value": 24656.380261659622,
+  "ktoken_claim_cd_186860864219906048": {
+    "value": 2214.3650307655334,
     "time_based": true,
-    "saved_at": 1743769263.1260543
-  },
-  "daily_img_cd_332920035066511362": {
-    "value": 29638.39125585556,
-    "time_based": true,
-    "saved_at": 1743769263.1260543
-  },
-  "ktoken_balance_250264560554999808": {
-    "value": 4442,
-    "time_based": false,
-    "saved_at": null
+    "saved_at": 1744080543.2355037
   },
   "ktoken_claim_cd_250264560554999808": {
-    "value": 3600,
+    "value": 2358.034307718277,
     "time_based": true,
-    "saved_at": 1743770300.1423197
+    "saved_at": 1744080543.2355037
   },
-  "ktoken_balance_239072925137895424": {
-    "value": 25514,
-    "time_based": false,
-    "saved_at": null
-  },
-  "ktoken_claim_cd_239072925137895424": {
+  "daily_img_cd_125527478595878912": {
     "value": 0,
     "time_based": true,
-    "saved_at": 1743769263.1260543
-  },
-  "ktoken_balance_217668205597032448": {
-    "value": 3601,
-    "time_based": false,
-    "saved_at": null
+    "saved_at": 1744080543.2355037
   },
   "ktoken_claim_cd_217668205597032448": {
+    "value": 2339.7540051937103,
+    "time_based": true,
+    "saved_at": 1744080543.2355037
+  },
+  "daily_img_cd_250264560554999808": {
     "value": 0,
     "time_based": true,
-    "saved_at": 1743769263.1260543
-  },
-  "daily_img_cd_186860864219906048": {
-    "value": 36154.923105955124,
-    "time_based": true,
-    "saved_at": 1743769263.1260543
-  },
-  "ktoken_balance_170479538151751682": {
-    "value": 3600,
-    "time_based": false,
-    "saved_at": null
-  },
-  "ktoken_claim_cd_170479538151751682": {
-    "value": 2386.0191690921783,
-    "time_based": true,
-    "saved_at": 1743769263.1260543
-  },
-  "ktoken_balance_332920035066511362": {
-    "value": 3000,
-    "time_based": false,
-    "saved_at": null
-  },
-  "ktoken_claim_cd_332920035066511362": {
-    "value": 2990.974505662918,
-    "time_based": true,
-    "saved_at": 1743769263.1260543
+    "saved_at": 1744080543.2355037
   }
 }
